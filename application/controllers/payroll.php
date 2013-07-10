@@ -5,6 +5,7 @@ class Payroll extends CI_Controller {
   public function index()
   {
     $name = $data['name'] = $this->input->post('name');
+    $data['compute'] = $this->input->post('compute');
     $salaryPerDay  = $data['salaryPerDay'] = $this->input->post('salaryPerDay') + 0;
     $daysRendered  = $data['daysRendered'] = $this->input->post('daysRendered') + 0;
     $sss  = $data['sss'] = $this->input->post('sss') + 0;
