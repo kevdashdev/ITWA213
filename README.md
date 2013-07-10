@@ -1,4 +1,4 @@
-ITWA213 / W32 - WEB APPLICATION DEVELOPMENT 2
+ITWA213 / W32
 -------------
 
-Making a simple calculator with [CodeIgniter](http://ellislab.com/codeigniter).
+Advance(?) Web Application Development using a PHP MVC framework, [CodeIgniter](http://ellislab.com/codeigniter).
