@@ -84,8 +84,9 @@
         <tr>
           <td>Name</td>
           <td>Gross</td>
-          <td>Deduction</td>
-          <td>Total</td>
+          <td>Tax</td>
+          <td>Contribution</td>
+          <td>Net</td>
         </tr>
       </thead>
       <tbody>
@@ -93,6 +94,7 @@
           <td><?php echo $name; ?></td>
           <td>&#8369;<?php echo number_format($gross, 2); ?></td>
           <td>&#8369;<?php echo number_format($taxDeduction, 2); ?></td>
+          <td>&#8369;<?php echo number_format($contribution, 2); ?></td>
           <td>&#8369;<?php echo number_format($total, 2); ?></td>
         </tr>
       </tbody>

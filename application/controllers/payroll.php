@@ -14,11 +14,12 @@ class Payroll extends CI_Controller {
     $tax  = $data['tax'] = $this->input->post('tax');
 
 
-    $data['gross'] = ($salaryPerDay * $daysRendered) + $sss + $philhealth + $pagibig;
+    $data['gross'] = ($salaryPerDay * $daysRendered);
     $tax = ($tax > 1) ? $tax/100 : $tax;
 
     $data['taxDeduction'] = $data['gross'] * $tax;
-    $data['total'] = $data['gross'] - $data['taxDeduction'];
+    $data['contribution'] = ( $sss + $philhealth + $pagibig );
+    $data['total'] = $data['gross'] - $data['taxDeduction'] - $data['contribution'];
 
     $this->load->view('payroll', $data);
   }
