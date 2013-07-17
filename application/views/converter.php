@@ -1,6 +1,6 @@
 <div id="row">
   <div class='large-6 columns text-center large-centered'>
-    <h1>Numeric to Word Converter</h1>
+    <h1>Number to Word Converter</h1>
     <hr>
     <form class='custom' action="/converter" method='post'>
       <div class="row collapse">
