@@ -44,7 +44,7 @@
   <dl class="sub-nav">
     <dd><a href="/calculator"><span data-tooltip class="tip-right has-tip button secondary small" title="Basic Calculator">1</span></a></dd>
     <dd><a href="/payroll"><span data-tooltip class="tip-right has-tip button secondary small" title="Basic Payroll System">2</span></a></dd>
-    <dd><a href="#"><span data-tooltip class="tip-right has-tip button secondary small" title="Enhanced Payroll System (Lab 2, using applied helpers)">3</span></a></dd>
+    <dd><a href="/apayroll"><span data-tooltip class="tip-right has-tip button secondary small" title="Enhanced Payroll System (Lab 2, using applied helpers)">3</span></a></dd>
     <dd><a href="/converter"><span data-tooltip class="tip-right has-tip button secondary small" title="Numeric to Word Converter">4</span></a></dd>
     <dd><a href="#"><span data-tooltip class="tip-right has-tip button secondary small" title="Customer Registration Form">5</span></a></dd>
     <dd><a href="#"><span data-tooltip class="tip-right has-tip button secondary small" title="Quiz Game">6</span></a></dd>
