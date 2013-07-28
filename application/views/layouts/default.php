@@ -27,7 +27,13 @@
   </div><!-- /.container -->
 </div><!-- /.navbar -->
 
-<div class="container"  style='margin-top: 100px;'>
+<div class="container"  style='margin-top: 80px;'>
+<?php if($this->session->userdata('loggedin')): ?>
+<div class="panel panel-success">
+  <div class="panel-heading">Success!</div>
+  You are now logged in.
+</div>
+<?php endif; ?>
   <div class="row">
     <div class="col-lg-12 panel">
       {yield}
@@ -40,6 +46,6 @@
   ('__proto__' in {} ? '<?php echo asset_url(); ?>js/vendor/jquery' : '<?php echo asset_url(); ?>js/vendor/zepto') +
   '.js><\/script>')
   </script>
-  <script src="<?php echo asset_url(); ?>js/foundation/bootstrap.min.js"></script>
+  <script src="<?php echo asset_url(); ?>js/bootstrap.min.js"></script>
 </body>
 </html>
