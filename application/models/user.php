@@ -1,27 +1,26 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class User extends CI_Model
-{
-    public function authenticate($email, $password)
-    {
-        // get password_digest
+class User extends CI_Model {
 
-        $password_digest = $this->db->select('password_digest')->get_where('users', array('email' => $email))->row()->password_digest;
+  public function check_account($data){
+    $q = $this->db->get_where('users', $data);
+    $cust = $q->result();
+    if($q->num_rows()>0){
+      $array = array(
+        'id' => $cust[0]->id,
+        'email' => $cust[0]->email,
+        'login' => true
+      );
 
-        if ($password_digest)
-        {
-            // hash password with password_digest and find user
+      $this->session->set_userdata($array);
 
-            $md5 = md5($password_digest);
-
-            $user = $this->db->select('email')->get_where('users', array(
-                'email' => $email,
-                'password_digest' => $md5
-            ))->row();
-
-            return $user;
-        }
-
-        return false;
+      return true;
+    } else{
+      return false;
     }
+  }
+
+
 }
+
+?>

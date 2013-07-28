@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="col-lg-6 col-push-3">
-    <form class="form-horizontal" action='/shop/login' method='post'>
+    <form class="form-horizontal" action='/customer/login' method='post'>
       <fieldset>
         <legend>Login</legend>
       <div class="form-group">

@@ -2,25 +2,24 @@
 
 class Customer extends CI_Controller {
   public function index(){
-    $this->load->view('customer/view_login');
+    $this->load->view('customer/index');
   }
   public function login(){
 
-    $u = $this->input->post('uname');
-    $p = $this->input->post('upass');
+    $u = $this->input->post('user');
     $userdata = array(
-      'email' => $u,
-      'password' => md5($p)
+      'email' => $u['email'],
+      'password_digest' => md5($u['password'])
     );
 
-    $this->load->model('model_customer');
-    if($this->model_customer->check_account($userdata)){
+    $this->load->model('user');
+    if($this->user->check_account($userdata)){
+      $data['valid'] = true;
       //echo 'success';
-      $this->load->view('customer/view_home');
+      $this->load->view('customer/home');
     } else {
       $data['invalid'] = true;
-      $this->load->view('customer/view_login',$data);
-
+      $this->index();
     }
 
 
@@ -31,7 +30,7 @@ class Customer extends CI_Controller {
     if(!$this->session->userdata('login')){
       $this->index();
     } else {
-      $this->load->view('customer/view_home');
+      $this->load->view('customer/home');
     }
   }
 

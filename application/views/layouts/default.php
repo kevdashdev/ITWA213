@@ -28,12 +28,6 @@
 </div><!-- /.navbar -->
 
 <div class="container"  style='margin-top: 80px;'>
-<?php if($this->session->userdata('loggedin')): ?>
-<div class="panel panel-success">
-  <div class="panel-heading">Success!</div>
-  You are now logged in.
-</div>
-<?php endif; ?>
   <div class="row">
     <div class="col-lg-12 panel">
       {yield}
