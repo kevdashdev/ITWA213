@@ -1,4 +1,11 @@
-
+<?php if($this->session->flashdata('msg') != '') : ?>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title">Notice</h3>
+  </div>
+  <?php echo $this->session->flashdata('msg'); ?>
+</div>
+<?php endif; ?>
 <div class="row">
   <div class="col-lg-6 col-push-3">
     <form class="form-horizontal" action='/customer/login' method='post'>
