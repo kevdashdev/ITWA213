@@ -23,7 +23,11 @@
 
     <!-- Be sure to leave the brand out there if you want it shown -->
     <a class="navbar-brand" href="/">ITWA213.A403</a>
-
+    <?php if($this->session->userdata('login')) :?>
+    <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">
+      <?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>
+    </a></p>
+    <?php endif; ?>
   </div><!-- /.container -->
 </div><!-- /.navbar -->
 

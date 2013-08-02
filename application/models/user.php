@@ -9,6 +9,8 @@ class User extends CI_Model {
       $array = array(
         'id' => $cust[0]->id,
         'email' => $cust[0]->email,
+        'first_name' => $cust[0]->first_name,
+        'last_name' => $cust[0]->last_name,
         'login' => true
       );
 

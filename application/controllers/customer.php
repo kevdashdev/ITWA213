@@ -4,7 +4,6 @@ class Customer extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
-    $this->load->library('session');
     ini_set('display_errors',1);
     error_reporting(E_ALL);
   }
@@ -13,7 +12,6 @@ class Customer extends CI_Controller {
     if(!$this->session->userdata('login')){
       $this->load->view('/customer/index');
     } else {
-      $this->session->set_flashdata('msg', 'Successfully logged in.');
       redirect('/customer/home');
     }
   }
@@ -42,6 +40,9 @@ class Customer extends CI_Controller {
   }
 
   public function home(){
+    header("Expires: Thu, 19 Nov 1981 08:52:00 GMT"); //Date in the past
+    header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0"); //HTTP/1.1
+    header("Pragma: no-cache");
     if(!$this->session->userdata('login')){
       $this->session->set_flashdata('msg', 'You must be logged in to access that page.');
       redirect('/customer/index');
